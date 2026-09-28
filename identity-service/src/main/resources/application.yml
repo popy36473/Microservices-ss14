@@ -1,0 +1,28 @@
+spring:
+    data:
+        redis:
+            host: localhost
+            port: 6379
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                format_sql: true
+    application:
+        name: identity-service
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        password: 110905
+        username: postgres
+        url: jdbc:postgresql://localhost:5432/identity_db
+server:
+    port: 8081
+
+app:
+    jwt:
+        secret: 404E635266556A586E3272357538782F413F4428472B4B6250655368566D5971
+        access-token-expiration: 900000      # 15 phút = 900,000 ms
+        refresh-token-expiration: 604800000 # 7 ngày = 604,800,000 ms
